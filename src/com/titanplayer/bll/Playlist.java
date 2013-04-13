@@ -5,25 +5,40 @@ import java.util.ArrayList;
 
 public class Playlist {
     
-    String name;
-    ArrayList<Song> songs;
+    private String name;
+    private ArrayList<Song> songs;
+    
     
     public Playlist() {
-        
+        songs = new ArrayList<Song>();
     }
     
     public Playlist(String newName) {
         name = newName;
+        songs = new ArrayList<Song>();
     }
     
     public int getSongCount () {
-        
-        return 0;
+        return songs.size();
     }
 
     public String getName() {
         return name;
     }
+    
+    public void addSong (Song newSong) {
+        songs.add(newSong);
+    }
+    
+    public Song getSong (int i) {
+        return songs.get(i);
+    }
+    
+    public int indexOf (Song mySong) {
+        return songs.indexOf(mySong);
+    }
+    
+    
     
     
 }

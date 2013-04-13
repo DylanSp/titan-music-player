@@ -49,6 +49,10 @@ public class PlayerGUI extends javax.swing.JFrame {
         prevSongButton = new javax.swing.JButton();
         nextSongButton = new javax.swing.JButton();
         stopButton = new javax.swing.JButton();
+        topMenuBar = new javax.swing.JMenuBar();
+        mainMenu = new javax.swing.JMenu();
+        newSongMenuItem = new javax.swing.JMenuItem();
+        newPlaylistMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,6 +157,18 @@ public class PlayerGUI extends javax.swing.JFrame {
 
         stopButton.setText("Stop");
 
+        mainMenu.setText("Menu");
+
+        newSongMenuItem.setText("Add New Song");
+        mainMenu.add(newSongMenuItem);
+
+        newPlaylistMenuItem.setText("Create New Playlist");
+        mainMenu.add(newPlaylistMenuItem);
+
+        topMenuBar.add(mainMenu);
+
+        setJMenuBar(topMenuBar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,7 +231,7 @@ public class PlayerGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -332,6 +348,9 @@ public class PlayerGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton loadPlaylistButton;
+    private javax.swing.JMenu mainMenu;
+    private javax.swing.JMenuItem newPlaylistMenuItem;
+    private javax.swing.JMenuItem newSongMenuItem;
     private javax.swing.JButton nextSongButton;
     private javax.swing.JButton playAllSongsButton;
     private javax.swing.JButton playPauseButton;
@@ -345,5 +364,6 @@ public class PlayerGUI extends javax.swing.JFrame {
     private javax.swing.JProgressBar songProgressBar;
     private javax.swing.JTable songTable;
     private javax.swing.JButton stopButton;
+    private javax.swing.JMenuBar topMenuBar;
     // End of variables declaration//GEN-END:variables
 }

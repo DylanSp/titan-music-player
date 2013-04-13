@@ -2,6 +2,7 @@
 package com.titanplayer.bll;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Library {
     
@@ -15,16 +16,26 @@ public class Library {
         return songs.size();
     }
 
-    public void addSong(Song songToAdd) {
-        songs.add(songToAdd);
-    }
-
     public Song getSong(int i) {
         return songs.get(i);
     }
-
+    
+    public void addSong(Song songToAdd) {
+        songs.add(songToAdd);
+    }
+    
     public void removeSong(int i) {
         songs.remove(i);
     }
 
+    public void sortByTitle() {
+        Collections.sort(songs, new TitleSorter());
+    }
+    
+    public void sortByArtist () {
+        Collections.sort(songs, new ArtistSorter());
+    }
+
+    
+    
 }

@@ -67,5 +67,29 @@ public class LibraryTests {
         myLibrary.removeSong(0);
         assertEquals(0, myLibrary.getSongCount());
     }
-
+    
+    @Test
+    public void sortByTitleTest () {
+        Library myLibrary = new Library();
+        Song song1 = new Song("Z Comes Last", "The Alphabet");
+        Song song2 = new Song("A Comes First", "The Alphabet");
+        myLibrary.addSong(song1);
+        myLibrary.addSong(song2);
+        myLibrary.sortByTitle();
+        assertEquals(myLibrary.getSong(0).getTitle(), "A Comes First");
+        
+    }
+    
+    @Test
+    public void sortByArtistTest () {
+        Library myLibrary = new Library();
+        Song song1 = new Song("Blah Blah Blah", "Second Artist");
+        Song song2 = new Song("Foo", "First Artist");
+        myLibrary.addSong(song1);
+        myLibrary.addSong(song2);
+        myLibrary.sortByArtist();
+        assertEquals(myLibrary.getSong(0).getArtist(), "First Artist");
+    }
+    
+    
 }

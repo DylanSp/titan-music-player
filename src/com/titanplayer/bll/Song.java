@@ -3,11 +3,11 @@ package com.titanplayer.bll;
 
 public class Song {
     
-    String title, artist;
+    private String title, artist;
 
     public Song(String newTitle, String newArtist) {
         title = newTitle;
-        artist = newArtist;        
+        artist = newArtist;
     }
 
     public String getTitle() {
@@ -18,6 +18,7 @@ public class Song {
         return artist;
     }
     
+
     
     
     
